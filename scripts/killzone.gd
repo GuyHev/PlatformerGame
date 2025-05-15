@@ -3,7 +3,7 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 func _on_body_entered(_body: Node2D) -> void:
-	decrease_life()
+	Global.life -= 1
 	if(Global.life <= 0):
 		get_tree().reload_current_scene()
 		Global.life = 3
@@ -16,5 +16,3 @@ func _on_timer_timeout() -> void:
 	Global.position = spawn_point.global_position
 	player.global_position = Global.position
 	
-func decrease_life() -> void:
-	Global.life -= 1

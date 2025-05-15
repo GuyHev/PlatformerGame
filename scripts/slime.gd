@@ -21,3 +21,11 @@ func _physics_process(delta: float) -> void:
 		#if $Sprite2D:  # flip sprite when turning
 		#	$Sprite2D.flip_h = direction < 0
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	Global.life -= 1
+	if(Global.life <= 0):
+		get_tree().reload_current_scene()
+		Global.life = 3
+		Global.picked_pineapples = 0
