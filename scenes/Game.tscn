@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlbuqxrtjexbe"]
+
+[ext_resource type="Script" uid="uid://bicyt60lsoeg6" path="res://scripts/Level_manager.gd" id="1_78awf"]
+[ext_resource type="Script" uid="uid://o0o5yuuec682" path="res://scripts/main_game.gd" id="1_s0nni"]
+[ext_resource type="PackedScene" uid="uid://1u2iidrhp6my" path="res://scenes/UI.tscn" id="2_3xj3m"]
+
+[node name="Main_Game" type="Node2D"]
+script = ExtResource("1_s0nni")
+
+[node name="Levels" type="Node" parent="."]
+script = ExtResource("1_78awf")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource("2_3xj3m")]
+offset_left = -1.0
+offset_right = 407.0
+offset_bottom = 464.0
