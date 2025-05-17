@@ -13,6 +13,5 @@ func _on_body_entered(_body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	var spawn_point = get_parent().get_node("start_spawn")
 	var player = get_parent().get_node("Player")
-	Global.position = spawn_point.global_position
-	player.global_position = Global.position
+	player.global_position = spawn_point.global_position
 	

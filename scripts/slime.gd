@@ -8,8 +8,7 @@ var direction: int = 1  # 1 = right, -1 = left
 
 func _ready() -> void:
 	start_position = global_position
-	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity.x = SPEED * direction
 	if not ray_cast_2d.is_colliding():
 		direction *= -1
@@ -21,10 +20,9 @@ func _physics_process(delta: float) -> void:
 		#if $Sprite2D:  # flip sprite when turning
 		#	$Sprite2D.flip_h = direction < 0
 	move_and_slide()
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	Global.life -= 1
+	Signals.on_hit.emit(global_position, 200.0)
 	if(Global.life <= 0):
 		get_tree().reload_current_scene()
 		Global.life = 3

@@ -4,12 +4,24 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const GRAVITY = 900
+const KNOCKBACK_DURATION = 0.4
+
 @onready var sprite = $AnimatedSprite2D
 
+var knockback_velocity := Vector2.ZERO
+var knockback_timer := 0.0
+
+func _ready() -> void:
+	Signals.on_hit.connect(self.knockback)
 func _physics_process(delta: float) -> void:
-	var direction := Input.get_axis("move_left", "move_right")
-	handle_physics(delta,direction)
-	handle_animation(direction)
+	if knockback_timer > 0:
+		knockback_timer -= delta
+		velocity = knockback_velocity
+	else:
+		var direction := Input.get_axis("move_left", "move_right")
+		handle_physics(delta, direction)
+		handle_animation(direction)
+
 	move_and_slide()
 func handle_physics(delta: float, direction: float) -> void:
 	# Apply gravity
@@ -40,3 +52,8 @@ func handle_animation(direction: float) -> void:
 		sprite.play("idle")
 func bounce(force: float) -> void:
 	velocity.y = force
+func knockback(from_position: Vector2 = global_position, strength: float = 200.0) -> void:
+	var direction = (global_position - from_position).normalized()
+	knockback_velocity = direction * strength
+	knockback_timer = KNOCKBACK_DURATION
+	sprite.play("hit")
