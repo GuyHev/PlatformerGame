@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1u2iidrhp6my"]
+[gd_scene load_steps=6 format=3 uid="uid://1u2iidrhp6my"]
 
 [ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/pineapple_label.gd" id="1_5en4g"]
+[ext_resource type="FontFile" uid="uid://3eyby7pentyu" path="res://assets/Fonts/pixel font.ttf" id="1_75u2n"]
 [ext_resource type="Script" uid="uid://dyfj2tg16473t" path="res://scripts/life_label.gd" id="2_ro3t7"]
 [ext_resource type="Texture2D" uid="uid://d24537nxv3k5c" path="res://assets/Custom made/Pineapple_icon.png" id="2_ua6yw"]
 [ext_resource type="Texture2D" uid="uid://drfl8rg2eq8bi" path="res://assets/Custom made/heart.png" id="4_75u2n"]
@@ -23,8 +24,9 @@ color = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 24.0
-offset_right = 263.0
-offset_bottom = 66.0
+offset_right = 264.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("1_75u2n")
 theme_override_font_sizes/font_size = 30
 text = "Pineapples : 0"
 script = ExtResource("1_5en4g")
@@ -43,7 +45,8 @@ layout_mode = 0
 offset_left = 360.0
 offset_top = 24.0
 offset_right = 560.0
-offset_bottom = 111.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("1_75u2n")
 theme_override_font_sizes/font_size = 30
 text = "Tries Left : 3
 "
