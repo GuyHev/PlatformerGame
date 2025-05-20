@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://f7hu3476fi2h"]
+
+[ext_resource type="Texture2D" uid="uid://daqsxwnmysh8p" path="res://assets/Custom made/dialog_box.png" id="1_txdcs"]
+[ext_resource type="FontFile" uid="uid://3eyby7pentyu" path="res://assets/Fonts/pixel font.ttf" id="2_cf5v1"]
+[ext_resource type="Script" uid="uid://yfcfqpfgxyiy" path="res://scripts/dialog_box.gd" id="3_1aoee"]
+
+[node name="DialogBox" type="MarginContainer"]
+offset_right = 41.0
+offset_bottom = 17.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_txdcs")
+region_rect = Rect2(-0.0315228, -0.0471287, 15.1078, 15.0718)
+patch_margin_left = 2
+patch_margin_top = 6
+patch_margin_right = 2
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_cf5v1")
+theme_override_font_sizes/font_size = 15
+text = "meodd"
+vertical_alignment = 1
+script = ExtResource("3_1aoee")

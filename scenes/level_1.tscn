@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://pdr763i84nx1"]
+[gd_scene load_steps=21 format=3 uid="uid://pdr763i84nx1"]
 
 [ext_resource type="Script" uid="uid://bg71ttdi7in1d" path="res://scripts/level_base.gd" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://cuql5c5igdgge" path="res://assets/Terrain/Terrain (16x16).png" id="2_2y5yt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bgej6e06ngyx" path="res://scenes/killzone.tscn" id="7_6dial"]
 [ext_resource type="PackedScene" uid="uid://dnhdrmdgoxhr7" path="res://scenes/tramp.tscn" id="8_7nomh"]
 [ext_resource type="PackedScene" uid="uid://83ehdlg1xast" path="res://scenes/next_level_door.tscn" id="9_1s4pk"]
+[ext_resource type="PackedScene" uid="uid://f7hu3476fi2h" path="res://scenes/dialog_box.tscn" id="10_2y5yt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_2y5yt")
@@ -361,3 +362,9 @@ shape = SubResource("RectangleShape2D_u5sy4")
 
 [node name="next_level_door" parent="." instance=ExtResource("9_1s4pk")]
 position = Vector2(330, -29)
+
+[node name="DialogBox" parent="." instance=ExtResource("10_2y5yt")]
+offset_left = -35.0
+offset_top = -114.0
+offset_right = 6.0
+offset_bottom = -97.0
