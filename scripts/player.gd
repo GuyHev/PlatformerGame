@@ -14,15 +14,19 @@ var knockback_timer := 0.0
 func _ready() -> void:
 	Signals.on_hit.connect(self.knockback)
 func _physics_process(delta: float) -> void:
-	if knockback_timer > 0:
-		knockback_timer -= delta
-		velocity = knockback_velocity
+	if not is_dead():
+		if not((Global.life <= 0)):
+			pass
+		if knockback_timer > 0:
+			knockback_timer -= delta
+			velocity = knockback_velocity
+		else:
+			var direction := Input.get_axis("move_left", "move_right")
+			handle_physics(delta, direction)
+			handle_animation(direction)
+		move_and_slide()
 	else:
-		var direction := Input.get_axis("move_left", "move_right")
-		handle_physics(delta, direction)
-		handle_animation(direction)
-
-	move_and_slide()
+		die()
 func handle_physics(delta: float, direction: float) -> void:
 	# Apply gravity
 	if not is_on_floor():
@@ -57,3 +61,11 @@ func knockback(from_position: Vector2 = global_position, strength: float = 200.0
 	knockback_velocity = direction * strength
 	knockback_timer = KNOCKBACK_DURATION
 	sprite.play("hit")
+func die() -> void:
+	get_tree().reload_current_scene()
+	Global.life = 3
+	Global.picked_pineapples = 0
+func is_dead() -> bool:
+	if	(Global.life <= 0):
+		return	true
+	return false		

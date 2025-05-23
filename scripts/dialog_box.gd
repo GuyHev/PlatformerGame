@@ -4,14 +4,16 @@ extends Label
 @onready var label: Label = $"."
 @onready var dialog_box: MarginContainer = $"../.."
 
+const  VISIBILITY_TIMER = 2.0
+
 var full_text: String = ""
 var typing_speed := 0.09
 var padding := Vector2(30, 30)
-var visibility_timer = 2.0
+
 
 func _ready():
 	label.text = ""
-	show_text("hello fellow traveller")
+	show_text("Hello fellow traveller. Collect all pineapples")
 
 func show_text(input_text: String):
 	full_text = input_text
@@ -26,6 +28,6 @@ func start_typing():
 		# Wait for typing speed delay
 		await get_tree().create_timer(typing_speed).timeout
 		i += 1
-	await get_tree().create_timer(visibility_timer).timeout
+	await get_tree().create_timer(VISIBILITY_TIMER).timeout
 	dialog_box.queue_free()
 	

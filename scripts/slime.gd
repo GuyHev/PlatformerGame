@@ -23,7 +23,3 @@ func _physics_process(_delta: float) -> void:
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	Global.life -= 1
 	Signals.on_hit.emit(global_position, 200.0)
-	if(Global.life <= 0):
-		get_tree().reload_current_scene()
-		Global.life = 3
-		Global.picked_pineapples = 0

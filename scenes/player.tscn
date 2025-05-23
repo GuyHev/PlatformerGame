@@ -266,6 +266,12 @@ size = Vector2(20, 24)
 collision_layer = 2
 script = ExtResource("1_scfhj")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -11)
+zoom = Vector2(3, 3)
+limit_bottom = 120
+limit_smoothed = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_vucmx")

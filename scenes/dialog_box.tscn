@@ -29,6 +29,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_cf5v1")
 theme_override_font_sizes/font_size = 15
-text = "meodd"
+text = "text"
 vertical_alignment = 1
 script = ExtResource("3_1aoee")
