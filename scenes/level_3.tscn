@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://fbyngqxbwdeh"]
+[gd_scene load_steps=13 format=3 uid="uid://fbyngqxbwdeh"]
 
 [ext_resource type="Script" uid="uid://bg71ttdi7in1d" path="res://scripts/level_base.gd" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://cuql5c5igdgge" path="res://assets/Terrain/Terrain (16x16).png" id="2_2y5yt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://db2pe0nly4niq" path="res://scenes/player.tscn" id="4_go7sj"]
 [ext_resource type="Texture2D" uid="uid://b3kqpetmvgjyn" path="res://assets/Custom made/ice-water.png" id="4_p6vls"]
 [ext_resource type="PackedScene" uid="uid://bgej6e06ngyx" path="res://scenes/killzone.tscn" id="7_6dial"]
+[ext_resource type="PackedScene" uid="uid://fgh2hojyrw6k" path="res://scenes/water.tscn" id="7_hhfj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_2y5yt")
@@ -258,3 +259,13 @@ position = Vector2(67, -111)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(228, 116.5)
 shape = SubResource("RectangleShape2D_iywne")
+
+[node name="water" parent="." instance=ExtResource("7_hhfj6")]
+position = Vector2(256, -93)
+
+[node name="CollisionPolygon2D" parent="water" index="0"]
+position = Vector2(23.7647, 40.6944)
+scale = Vector2(6.47059, 4.58051)
+polygon = PackedVector2Array(-8.46364, -11.706, 9, -11.4872, 9, 12.5812, -8.46364, 12.8)
+
+[editable path="water"]

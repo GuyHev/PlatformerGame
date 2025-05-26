@@ -12,3 +12,4 @@ func _ready() -> void:
 func _on_player_died():
 	Global.position = spawn_point.global_position
 	player.global_position = Global.position
+	

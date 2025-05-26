@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://2wfww0qottse"]
+[gd_scene format=3 uid="uid://fgh2hojyrw6k"]
 
-[node name="Area2D" type="Area2D"]
+[node name="water" type="Area2D" groups=["water"]]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(35, -6)
-scale = Vector2(1.28565, 0.998958)
-polygon = PackedVector2Array(-11.6339, -13.4204, 6.26441, -14.4, 13.5864, 15.9673, -14.0746, 19.8857)
+polygon = PackedVector2Array(-8, -8, 9, -8, 9, 8, -8, 8)

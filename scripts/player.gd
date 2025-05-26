@@ -52,7 +52,6 @@ func handle_physics(delta: float, direction: float) -> void:
 			velocity.y = -speed
 		elif Input.is_action_pressed("move_down"):
 			velocity.y = speed
-			
 		velocity.x = direction * speed
 	if current_profile == "normal":
 		# Apply gravity
@@ -106,13 +105,11 @@ func is_dead() -> bool:
 		return	true
 	return false
 
-#detect specific layers which the player has entered
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	is_in_water = true
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("water"):
+		is_in_water = true
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	is_in_water = false
-
-	# Give a small upward push when leaving water
-	if velocity.y >= 0:
-		velocity.y = 300  # tweak as needed
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("water"):
+			is_in_water = false
+			velocity.y = (profiles["normal"])["jump_velocity"]
