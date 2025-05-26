@@ -352,17 +352,14 @@ position = Vector2(46, -34)
 [node name="Spikes3" parent="spikes" instance=ExtResource("11_2os1m")]
 position = Vector2(10, -50)
 rotation = -3.13621
-scale = Vector2(1, 1)
 
 [node name="Spikes5" parent="spikes" instance=ExtResource("11_2os1m")]
 position = Vector2(39, -50)
 rotation = -3.13621
-scale = Vector2(1, 1)
 
 [node name="Spikes6" parent="spikes" instance=ExtResource("11_2os1m")]
 position = Vector2(65, -50)
 rotation = -3.13621
-scale = Vector2(1, 1)
 
 [node name="Spikes4" parent="spikes" instance=ExtResource("11_2os1m")]
 position = Vector2(77, -34)
