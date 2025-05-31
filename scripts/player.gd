@@ -3,10 +3,12 @@ extends CharacterBody2D
 const KNOCKBACK_DURATION = 0.4
 
 @onready var sprite = $AnimatedSprite2D
+@onready var main_coll_shape_2d:  = $CollisionShape2D
+@onready var area2d_coll_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 
 var profiles = {
-	"normal": {"speed": 130.0, "jump_velocity": -300.0,"gravity": 900.0},
-	"water": {"speed": 80.0, "jump_velocity": -180.0,"gravity": 0.0}
+	"normal": {"speed": 130.0, "jump_velocity": -300.0,"gravity": 900.0, "shape_w": Shape2D},
+	"water": {"speed": 80.0, "jump_velocity": -180.0,"gravity": 0.0, "shape_w": Shape2D}
 }
 var current_profile = "normal"
 var is_in_water = false
@@ -20,6 +22,8 @@ var knockback_timer := 0.0
 
 func _ready() -> void:
 	Signals.on_hit.connect(self.knockback)
+	store_shape(main_coll_shape_2d,"normal")
+	store_shape(area2d_coll_shape_2d,"water")
 
 func _physics_process(delta: float) -> void:
 	if is_dead():
@@ -42,6 +46,9 @@ func _physics_process(delta: float) -> void:
 
 func handle_physics(delta: float, direction: float) -> void:
 	if current_profile == "water":
+		#set main collision shape for water detection
+		main_coll_shape_2d.shape.size.x = (profiles["water"])["shape_w"]
+		
 		if direction != 0:
 			velocity.x = direction * speed
 			sprite.flip_h = direction < 0 #the right part afte '=' return boolean expression
@@ -54,6 +61,9 @@ func handle_physics(delta: float, direction: float) -> void:
 			velocity.y = speed
 		velocity.x = direction * speed
 	if current_profile == "normal":
+		#set main collision shape for normal detection
+		main_coll_shape_2d.shape.size.x = (profiles["normal"])["shape_w"]
+		
 		# Apply gravity
 		if not is_on_floor():
 			velocity.y += gravity * delta	
@@ -113,3 +123,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("water"):
 			is_in_water = false
 			velocity.y = (profiles["normal"])["jump_velocity"]
+
+func store_shape(collision2d: CollisionShape2D, profile: String):
+	(profiles[profile])["shape_w"] = collision2d.shape.size.x
+	
