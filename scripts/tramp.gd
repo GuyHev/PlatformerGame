@@ -9,7 +9,7 @@ var is_bouncing = false  # New flag to track if the player has bounced yet
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and (not is_bouncing):
 		if body.velocity.y >= 0:
-			body.bounce(BOUNCE_VELOCITY)
+			body.velocity.y = BOUNCE_VELOCITY
 			sprite.play("on jump")
 			timer.start()
 			is_bouncing = true

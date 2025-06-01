@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bg71ttdi7in1d" path="res://scripts/level_base.gd" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://cuql5c5igdgge" path="res://assets/Terrain/Terrain (16x16).png" id="2_2y5yt"]
 [ext_resource type="Texture2D" uid="uid://p15k6o8t5ft2" path="res://assets/Background/Green.png" id="3_2os1m"]
-[ext_resource type="PackedScene" uid="uid://db2pe0nly4niq" path="res://scenes/player.tscn" id="4_go7sj"]
+[ext_resource type="PackedScene" uid="uid://cubp62c4ho37x" path="res://scenes/player.tscn" id="4_go7sj"]
 [ext_resource type="Texture2D" uid="uid://b3kqpetmvgjyn" path="res://assets/Custom made/ice-water.png" id="4_p6vls"]
 [ext_resource type="PackedScene" uid="uid://bgej6e06ngyx" path="res://scenes/killzone.tscn" id="7_6dial"]
 [ext_resource type="PackedScene" uid="uid://fgh2hojyrw6k" path="res://scenes/water.tscn" id="7_hhfj6"]
