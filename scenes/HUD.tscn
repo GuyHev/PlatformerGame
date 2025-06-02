@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://1u2iidrhp6my"]
 
-[ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/pineapple_label.gd" id="1_5en4g"]
+[ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/UI/pineapple_label.gd" id="1_5en4g"]
 [ext_resource type="FontFile" uid="uid://3eyby7pentyu" path="res://assets/Fonts/pixel font.ttf" id="1_75u2n"]
-[ext_resource type="Script" uid="uid://dyfj2tg16473t" path="res://scripts/life_label.gd" id="2_ro3t7"]
+[ext_resource type="Script" uid="uid://dyfj2tg16473t" path="res://scripts/UI/life_label.gd" id="2_ro3t7"]
 [ext_resource type="Texture2D" uid="uid://d24537nxv3k5c" path="res://assets/Custom made/Pineapple_icon.png" id="2_ua6yw"]
 [ext_resource type="Texture2D" uid="uid://drfl8rg2eq8bi" path="res://assets/Custom made/heart.png" id="4_75u2n"]
 

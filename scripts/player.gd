@@ -7,19 +7,16 @@ extends CharacterBody2D
 # States
 var normal_state
 var swim_state
-var knockback_state
+var damaged_state
 var dead_state
 
-#Player variables
+# Player variables
 var is_in_water = false
 var normal_shape
 var swim_shape
 var current_state: Node = null
 
 func _ready() -> void:
-	# Connect Signals
-	Signals.on_hit.connect(apply_knockback)
-	
 	# Initialize shapes
 	normal_shape = main_coll_shape_2d.shape.size.x
 	swim_shape = area2d_coll_shape_2d.shape.size.x
@@ -27,10 +24,11 @@ func _ready() -> void:
 	# Load states and assign player reference
 	normal_state = preload("uid://sndnetw7olwx").new()
 	swim_state = preload("uid://bej3f48imahls").new()
-	knockback_state = preload("uid://c6gmcsh85n4m2").new()
+	damaged_state = preload("uid://c6gmcsh85n4m2").new()
 	dead_state = preload("uid://c6kpkvlv72m3q").new()
-
-	for state in [normal_state, swim_state, knockback_state, dead_state]:
+	
+	# Add states files as nodes of Player
+	for state in [normal_state, swim_state, damaged_state, dead_state]:
 		add_child(state)
 		state.player = self
 
@@ -50,16 +48,3 @@ func change_state(new_state: BaseState) -> void:
 	var prev_state = current_state
 	current_state = new_state
 	current_state.enter(prev_state)
-
-func apply_knockback(from_position: Vector2 = Vector2.ZERO, strength: float = 200.0) -> void:
-	knockback_state.setup(from_position, strength)
-	change_state(knockback_state)
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("water"):
-		is_in_water = true
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.is_in_group("water"):
-		is_in_water = false
-		velocity.y = -300

@@ -2,7 +2,8 @@ extends Node
 
 var levels = [
 	"uid://pdr763i84nx1",
-	"uid://b1gi27lu2fy3h"
+	"uid://b1gi27lu2fy3h",
+	"uid://fbyngqxbwdeh"
 ]
 
 var current_level_index = 0

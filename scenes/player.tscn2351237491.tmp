@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cubp62c4ho37x"]
+[gd_scene load_steps=50 format=3 uid="uid://cubp62c4ho37x"]
 
 [ext_resource type="Script" uid="uid://c37ckmarfg7nk" path="res://scripts/player.gd" id="1_snghq"]
 [ext_resource type="Texture2D" uid="uid://d0jrmin7wdw3w" path="res://assets/Main Characters/Ninja Frog/Fall (32x32).png" id="2_sd87i"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://ck844r8wnfdis" path="res://assets/Main Characters/Ninja Frog/Jump (32x32).png" id="5_x5ced"]
 [ext_resource type="Texture2D" uid="uid://u0cl2ud2isr" path="res://assets/Main Characters/Ninja Frog/Run (32x32).png" id="6_16ml7"]
 [ext_resource type="Texture2D" uid="uid://uoapyu2ux1dl" path="res://assets/Custom made/swim.png" id="7_mod63"]
+[ext_resource type="Script" uid="uid://bqfk6rhlxoh2i" path="res://scripts/player_states/base_state_class.gd" id="8_sd87i"]
+[ext_resource type="Script" uid="uid://sndnetw7olwx" path="res://scripts/player_states/normal_state.gd" id="9_38edh"]
+[ext_resource type="Script" uid="uid://bej3f48imahls" path="res://scripts/player_states/swim_state.gd" id="10_euhpk"]
+[ext_resource type="Script" uid="uid://c6kpkvlv72m3q" path="res://scripts/player_states/dead_state.gd" id="11_16ml7"]
+[ext_resource type="Script" uid="uid://c6gmcsh85n4m2" path="res://scripts/player_states/knockback_state.gd" id="11_x5ced"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
 atlas = ExtResource("2_sd87i")
@@ -305,10 +310,29 @@ autoplay = "idle"
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_scfhj")
 
-[node name="Area2D" type="Area2D" parent="." groups=["player"]]
-collision_layer = 4
-collision_mask = 0
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -19.25)
 shape = SubResource("RectangleShape2D_fjrip")
+
+[node name="States" type="Node" parent="."]
+
+[node name="base_state_class" type="Node" parent="States"]
+script = ExtResource("8_sd87i")
+
+[node name="normal_state" type="Node" parent="States"]
+script = ExtResource("9_38edh")
+
+[node name="swim_state" type="Node" parent="States"]
+script = ExtResource("10_euhpk")
+
+[node name="dead_state" type="Node" parent="States"]
+script = ExtResource("11_16ml7")
+
+[node name="knockback_state" type="Node" parent="States"]
+script = ExtResource("11_x5ced")
+
+[connection signal="area_entered" from="Area2D" to="States/swim_state" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="States/swim_state" method="_on_area_2d_area_exited"]

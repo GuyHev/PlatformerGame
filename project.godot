@@ -10,15 +10,15 @@ config_version=5
 
 [application]
 
-config/name="froggy"
+config/name="platformer"
 run/main_scene="uid://dlbuqxrtjexbe"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-Global="*res://scripts/Global.gd"
+Global="*res://scripts/Globals/Global.gd"
 LevelManager="*res://scripts/Level_manager.gd"
-Signals="*res://scripts/signals.gd"
+Signals="*res://scripts/Globals/signals.gd"
 
 [display]
 

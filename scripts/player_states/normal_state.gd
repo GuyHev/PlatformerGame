@@ -5,8 +5,12 @@ var jump_velocity= -300.0
 var gravity = 900.0
 
 func enter(_prev_state: BaseState) -> void:
+	Signals.on_enter_water.connect(on_water_enter)
 	player.main_coll_shape_2d.shape.size.x = player.normal_shape
 
+func exit() -> void:
+	Signals.on_enter_water.disconnect(on_water_enter)
+	
 func physics_update(delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
 
@@ -36,7 +40,7 @@ func physics_update(delta: float) -> void:
 	else:
 		player.sprite.play("idle")
 
-	# Transition to SwimState if in water
-	if player.is_in_water:
+func on_water_enter(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		player.is_in_water = true
 		player.change_state(player.swim_state)
-		
