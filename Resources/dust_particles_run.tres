@@ -1,0 +1,39 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://c6wavkwtxfkpl"]
+
+[sub_resource type="Curve" id="Curve_smehm"]
+_data = [Vector2(0, 0.988764), 0.0, 0.0, 0, 0, Vector2(0.496552, 0.640449), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ur7pv"]
+curve = SubResource("Curve_smehm")
+
+[sub_resource type="Curve" id="Curve_fjrip"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.813793, -214.382), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_smehm"]
+curve = SubResource("Curve_fjrip")
+
+[resource]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(-10, 0, 0)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 185.1
+angle_curve = SubResource("CurveTexture_smehm")
+direction = Vector3(-10, 0, 0)
+spread = 3.621
+flatness = 1.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.0
+scale_max = 0.5
+alpha_curve = SubResource("CurveTexture_ur7pv")
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 8.025
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.592
+turbulence_influence_max = 0.592
+turbulence_initial_displacement_min = -8.2
+turbulence_initial_displacement_max = 1.49012e-06

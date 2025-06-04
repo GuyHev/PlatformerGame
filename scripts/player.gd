@@ -3,7 +3,8 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var main_coll_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var area2d_coll_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
-@onready var dust_particle: GPUParticles2D = $dust_particle
+@onready var dust_particle_run: GPUParticles2D = $dust_particle_run
+@onready var dust_particle_land: GPUParticles2D = $dust_particle_land
 
 # States
 var normal_state
@@ -16,6 +17,7 @@ var is_in_water = false
 var normal_shape
 var swim_shape
 var current_state: Node = null
+var was_on_floor = false
 
 func _ready() -> void:
 	# Initialize shapes
@@ -52,11 +54,15 @@ func change_state(new_state: BaseState) -> void:
 	current_state.enter(prev_state)
 
 func apply_dust():
+	if not was_on_floor and is_on_floor():
+		dust_particle_land.restart()
+	was_on_floor = is_on_floor()
+	
 	if velocity.x != 0 and is_on_floor() :
 		var direction = sign(velocity.x)
-		dust_particle.process_material.direction = Vector3(direction, 0, 0)
+		dust_particle_run.process_material.direction = Vector3(direction, 0, 0)
 		var offset = 10 * -direction
-		dust_particle.process_material.emission_shape_offset = Vector3(offset, 0, 0)
-		dust_particle.emitting = true
+		dust_particle_run.process_material.emission_shape_offset = Vector3(offset, 0, 0)
+		dust_particle_run.emitting = true
 	else: 
-		dust_particle.emitting = false
+		dust_particle_run.emitting = false
