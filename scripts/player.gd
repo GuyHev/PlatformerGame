@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var main_coll_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var area2d_coll_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var dust_particle: GPUParticles2D = $dust_particle
 
 # States
 var normal_state
@@ -35,6 +36,7 @@ func _ready() -> void:
 	change_state(normal_state)
 
 func _physics_process(delta: float) -> void:
+	apply_dust()
 	if Global.life <= 0:
 		current_state = dead_state
 		change_state(current_state)
@@ -48,3 +50,13 @@ func change_state(new_state: BaseState) -> void:
 	var prev_state = current_state
 	current_state = new_state
 	current_state.enter(prev_state)
+
+func apply_dust():
+	if velocity.x != 0 and is_on_floor() :
+		var direction = sign(velocity.x)
+		dust_particle.process_material.direction = Vector3(direction, 0, 0)
+		var offset = 10 * -direction
+		dust_particle.process_material.emission_shape_offset = Vector3(offset, 0, 0)
+		dust_particle.emitting = true
+	else: 
+		dust_particle.emitting = false
