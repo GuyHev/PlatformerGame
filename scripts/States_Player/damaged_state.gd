@@ -8,6 +8,10 @@ var knockback_velocity = Vector2.ZERO
 func enter(_prev_state: BaseState) -> void:
 	timer = KNOCKBACK_DURATION
 	player.sprite.play("hit")
+	
+func _ready() -> void:
+	# The object that hitting responsible to emit singal, thus this state only need to connect when we preload and add it as node
+	Signals.on_hit.connect(setup)
 
 func physics_update(delta: float) -> void:
 	timer -= delta
@@ -19,10 +23,6 @@ func physics_update(delta: float) -> void:
 		else:
 			player.change_state(player.normal_state)
 
-func _ready() -> void:
-	# The object that hitting responsible to emit singal, thus this state only need to connect when we preloaded and added as node
-	Signals.on_hit.connect(setup)
-	
 func setup(from_position: Vector2, strength: float) -> void:
 	knockback_velocity = (player.global_position - from_position).normalized() * strength
 	player.change_state(player.damaged_state)

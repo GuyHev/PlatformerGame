@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlbuqxrtjexbe"]
 
-[ext_resource type="Script" uid="uid://bicyt60lsoeg6" path="res://scripts/Level_manager.gd" id="1_78awf"]
+[ext_resource type="Script" uid="uid://bicyt60lsoeg6" path="res://scripts/Globals & Autoloads/Level_manager.gd" id="1_78awf"]
 [ext_resource type="Script" uid="uid://o0o5yuuec682" path="res://scripts/main_game.gd" id="1_s0nni"]
 [ext_resource type="PackedScene" uid="uid://1u2iidrhp6my" path="res://scenes/HUD.tscn" id="2_3xj3m"]
 

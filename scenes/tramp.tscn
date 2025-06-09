@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dnhdrmdgoxhr7"]
+[gd_scene load_steps=14 format=3 uid="uid://dnhdrmdgoxhr7"]
 
 [ext_resource type="Script" uid="uid://b0e8nsejsaacs" path="res://scripts/tramp.gd" id="1_lbjd4"]
 [ext_resource type="Texture2D" uid="uid://dklqc26wwpura" path="res://assets/Traps/Trampoline/Idle.png" id="2_bm2eq"]
@@ -71,10 +71,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nilmk")
 }],
-"loop": true,
+"loop": false,
 "name": &"on jump",
 "speed": 20.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfa54"]
+size = Vector2(25, 8)
 
 [node name="tramp" type="Area2D"]
 collision_mask = 2
@@ -83,11 +86,10 @@ script = ExtResource("1_lbjd4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rwmss")
 animation = &"on jump"
-frame_progress = 0.805989
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.052
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 10)
+shape = SubResource("RectangleShape2D_wfa54")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

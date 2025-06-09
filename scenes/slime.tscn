@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cnu7qu6rs47h7"]
 
-[ext_resource type="Script" uid="uid://db2ulxxt4f6uv" path="res://scripts/slime.gd" id="1_s05fa"]
+[ext_resource type="Script" uid="uid://db2ulxxt4f6uv" path="res://scripts/Traps & Enemies/slime.gd" id="1_s05fa"]
 [ext_resource type="Texture2D" uid="uid://cgx3gswfqhimp" path="res://assets/Custom made/slime.png" id="2_s05fa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egd41"]

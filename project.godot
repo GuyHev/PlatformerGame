@@ -16,14 +16,12 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-Global="*res://scripts/Globals/Global.gd"
-LevelManager="*res://scripts/Level_manager.gd"
-Signals="*res://scripts/Globals/signals.gd"
+Global="*res://scripts/Globals & Autoloads/Global.gd"
+LevelManager="*res://scripts/Globals & Autoloads/Level_manager.gd"
+Signals="*res://scripts/Globals & Autoloads/signals.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
 window/stretch/mode="viewport"
 
 [input]

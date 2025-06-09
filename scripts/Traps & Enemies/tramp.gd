@@ -2,7 +2,6 @@ extends Area2D
 
 const BOUNCE_VELOCITY = -500
 
-@onready var timer: Timer = $Timer
 @onready var sprite = $AnimatedSprite2D
 var is_bouncing = false  # New flag to track if the player has bounced yet
 
@@ -11,12 +10,9 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.velocity.y >= 0:
 			body.velocity.y = BOUNCE_VELOCITY
 			sprite.play("on jump")
-			timer.start()
 			is_bouncing = true
+			print(is_bouncing)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		is_bouncing = false
-
-func _on_timer_timeout() -> void:
-	sprite.play("idle")
