@@ -4,7 +4,7 @@ const KNOCKBACK_POWER = 220.0
 
 @onready var saw: RigidBody2D = $saw
 @onready var pin_joint: PinJoint2D = $PinJoint2D
-var velocity := 7
+var velocity := 9
 
 func _ready():
 	pin_joint.motor_enabled = true

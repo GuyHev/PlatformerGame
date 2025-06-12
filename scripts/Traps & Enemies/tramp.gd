@@ -11,7 +11,6 @@ func _on_body_entered(body: Node2D) -> void:
 			body.velocity.y = BOUNCE_VELOCITY
 			sprite.play("on jump")
 			is_bouncing = true
-			print(is_bouncing)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":

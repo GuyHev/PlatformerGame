@@ -13,7 +13,10 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	if not are_pineapples_remaining():
-		LevelManager.load_next_level(get_tree().current_scene)
+		# When Physics interpolation is enabled in the project settings, use the line below
+		LevelManager.call_deferred("load_next_level",get_tree().current_scene)
+		# Otherwise use the line below
+		#LevelManager.callload_next_level(get_tree().current_scene)
 
 func are_pineapples_remaining() -> bool:
 	return pineapples.get_child_count() > 0

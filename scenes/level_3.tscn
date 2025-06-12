@@ -284,79 +284,79 @@ position = Vector2(544, -161)
 [node name="spikes" type="Node" parent="."]
 
 [node name="Spikes" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(348, -114)
+position = Vector2(345, -114)
 
 [node name="Spikes2" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(364, -114)
+position = Vector2(361, -114)
 
 [node name="Spikes3" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(380, -114)
+position = Vector2(377, -114)
 
 [node name="Spikes4" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(396, -114)
+position = Vector2(393, -114)
 
 [node name="Spikes5" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(412, -114)
+position = Vector2(409, -114)
 
 [node name="Spikes6" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(428, -114)
+position = Vector2(425, -114)
 
 [node name="Spikes7" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(444, -114)
+position = Vector2(441, -114)
 
 [node name="Spikes8" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(460, -114)
+position = Vector2(457, -114)
 
 [node name="Spikes9" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(476, -114)
+position = Vector2(473, -114)
 
 [node name="Spikes10" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(492, -114)
+position = Vector2(489, -114)
 
 [node name="Spikes11" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(508, -114)
+position = Vector2(505, -114)
 
 [node name="Spikes12" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(524, -114)
+position = Vector2(521, -114)
 
 [node name="Spikes13" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(540, -114)
+position = Vector2(537, -114)
 
 [node name="Spikes14" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(556, -114)
+position = Vector2(553, -114)
 
 [node name="Spikes15" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(572, -114)
+position = Vector2(569, -114)
 
 [node name="Spikes16" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(588, -114)
+position = Vector2(585, -114)
 
 [node name="Spikes17" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(604, -114)
+position = Vector2(601, -114)
 
 [node name="Spikes18" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(620, -114)
+position = Vector2(617, -114)
 
 [node name="Spikes19" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(636, -114)
+position = Vector2(633, -114)
 
 [node name="Spikes20" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(652, -114)
+position = Vector2(649, -114)
 
 [node name="Spikes21" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(668, -114)
+position = Vector2(665, -114)
 
 [node name="Spikes22" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(684, -114)
+position = Vector2(681, -114)
 
 [node name="Spikes23" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(700, -114)
+position = Vector2(697, -114)
 
 [node name="Spikes24" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(715, -114)
+position = Vector2(713, -114)
 
 [node name="Spikes25" parent="spikes" instance=ExtResource("8_wae8j")]
-position = Vector2(731, -114)
+position = Vector2(729, -114)
 
 [node name="pineapples" type="Node" parent="."]
 
@@ -434,6 +434,6 @@ position = Vector2(553, -383)
 position = Vector2(553, -153)
 
 [node name="saw" parent="." instance=ExtResource("13_q2dsb")]
-position = Vector2(162, -201)
+position = Vector2(162, -206)
 
 [editable path="water"]

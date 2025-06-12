@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var area2d_coll_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var dust_particle_run: GPUParticles2D = $dust_particle_run
 @onready var dust_particle_land: GPUParticles2D = $dust_particle_land
+@onready var camera_2d: Camera2D = $Camera2D
 
 # States
 var normal_state
@@ -20,6 +21,15 @@ var current_state: Node = null
 var was_on_floor = false
 
 func _ready() -> void:
+	"""
+		Note: 
+		1. This game is jittering. This happens in most pixel art games.
+		2. To prevent jittering we enable Physics interpolation in the project settings.
+		3. When loading new level, due to Physics interpolation being enabled the player camera becomes inactive.
+		4. We use the line below to fix this.
+	"""
+	camera_2d.make_current()
+	
 	# Initialize shapes
 	normal_shape = main_coll_shape_2d.shape.size.x
 	swim_shape = area2d_coll_shape_2d.shape.size.x

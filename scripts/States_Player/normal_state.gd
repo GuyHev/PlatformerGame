@@ -40,7 +40,6 @@ func physics_update(delta: float) -> void:
 	else:
 		player.sprite.play("idle")
 		
-
 func on_water_enter(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		player.is_in_water = true
