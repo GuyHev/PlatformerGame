@@ -1,5 +1,7 @@
 extends CharacterBody2D 
 
+const BOOST = -300.0
+
 @onready var sprite = $AnimatedSprite2D
 @onready var main_coll_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var area2d_coll_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
@@ -30,6 +32,11 @@ func _ready() -> void:
 	"""
 	camera_2d.make_current()
 	
+	# Connect signals 
+	Signals.on_hit.connect(_on_hit)
+	Signals.on_enter_water.connect(_on_enter_water)
+	Signals.on_exit_water.connect(_on_exit_water)
+	
 	# Initialize shapes
 	normal_shape = main_coll_shape_2d.shape.size.x
 	swim_shape = area2d_coll_shape_2d.shape.size.x
@@ -50,13 +57,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	apply_dust()
 	if Global.life <= 0:
-		current_state = dead_state
-		change_state(current_state)
+		change_state(dead_state)
 	else:
 		current_state.physics_update(delta)
 		move_and_slide()
 
 func change_state(new_state: BaseState) -> void:
+	if current_state == new_state:
+		return
 	if current_state != null:
 		current_state.exit()
 	var prev_state = current_state
@@ -76,3 +84,18 @@ func apply_dust():
 		dust_particle_run.emitting = true
 	else: 
 		dust_particle_run.emitting = false
+
+func _on_hit(from_position: Vector2, strength: float) -> void:
+	damaged_state.setup(from_position,strength)
+	change_state(damaged_state)
+
+func _on_enter_water(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		is_in_water = true
+		change_state(swim_state)
+
+func _on_exit_water(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		is_in_water = false
+		velocity.y = BOOST
+		change_state(normal_state)

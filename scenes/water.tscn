@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fgh2hojyrw6k"]
 
 [ext_resource type="Shader" uid="uid://bdcou7dyfa7gm" path="res://shaders/water1.gdshader" id="1_p1n2c"]
-[ext_resource type="Script" uid="uid://tgjothewtia7" path="res://scripts/water.gd" id="1_s3811"]
+[ext_resource type="Script" uid="uid://tgjothewtia7" path="res://scripts/Terrain/water.gd" id="1_s3811"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s3811"]
 shader = ExtResource("1_p1n2c")

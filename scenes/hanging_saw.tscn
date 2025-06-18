@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cxdo68a4isbh7"]
+[gd_scene load_steps=17 format=3 uid="uid://cxdo68a4isbh7"]
 
 [ext_resource type="Texture2D" uid="uid://dn52t56yu5hcr" path="res://assets/Traps/Saws/On (38x38).png" id="1_1tcna"]
 [ext_resource type="Texture2D" uid="uid://cl16t2tm4428m" path="res://assets/Traps/Saws/Chain.png" id="1_svgmw"]
 [ext_resource type="Script" uid="uid://b6y3i2vx6kqak" path="res://scripts/Traps & Enemies/hanging_saw.gd" id="2_a166y"]
+[ext_resource type="Texture2D" uid="uid://qsjsi2ls1kmm" path="res://assets/Traps/Saws/rope.png" id="3_na6nd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a166y"]
 radius = 3.16228
@@ -91,6 +92,13 @@ texture = ExtResource("1_svgmw")
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 node_a = NodePath("..")
 node_b = NodePath("../saw")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-60, 30, 0, 0)
+width = 6.0
+texture = ExtResource("3_na6nd")
+texture_mode = 2
+round_precision = 9
 
 [node name="saw" type="RigidBody2D" parent="."]
 position = Vector2(-60, 30)

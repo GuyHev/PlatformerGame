@@ -361,46 +361,49 @@ position = Vector2(729, -114)
 [node name="pineapples" type="Node" parent="."]
 
 [node name="Area2D" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(791, -46)
+position = Vector2(792, -51)
 
 [node name="Area2D2" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(555, -15)
+position = Vector2(569, -17)
 
 [node name="Area2D3" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(498, -16)
+position = Vector2(511, -16)
 
 [node name="Area2D4" parent="pineapples" instance=ExtResource("9_ha73p")]
 position = Vector2(791, -89)
 
 [node name="Area2D5" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(688, -14)
+position = Vector2(679, -17)
 
 [node name="Area2D6" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(618, -14)
+position = Vector2(626, -17)
 
 [node name="Area2D7" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(442, -16)
+position = Vector2(455, -16)
 
 [node name="Area2D8" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(388, -16)
+position = Vector2(399, -16)
 
 [node name="Area2D9" parent="pineapples" instance=ExtResource("9_ha73p")]
 position = Vector2(340, -16)
 
 [node name="Area2D10" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(282, -16)
+position = Vector2(281, -15)
 
 [node name="Area2D11" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(280, -61)
+position = Vector2(281, -49)
 
 [node name="Area2D12" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(281, -92)
+position = Vector2(281, -87)
 
 [node name="Area2D13" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(742, -15)
+position = Vector2(731, -17)
 
 [node name="Area2D14" parent="pineapples" instance=ExtResource("9_ha73p")]
-position = Vector2(788, -14)
+position = Vector2(792, -16)
+
+[node name="Area2D15" parent="pineapples" instance=ExtResource("9_ha73p")]
+position = Vector2(553, -405)
 
 [node name="tramps" type="Node" parent="."]
 

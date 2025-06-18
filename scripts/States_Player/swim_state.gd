@@ -2,17 +2,14 @@ extends BaseState
 
 const BOOST: float = -300.0
 var speed = 80.0
-var jump_velocity= -180.0
+var jump_velocity = -180.0
 var gravity = 0.0
 
 func enter(_prev_state: BaseState) -> void:
-	# connecting to detection signal when getting out of water 
-	# logic: because player is in swim_state => player is in water => can exit water => can connect on_exit_water
-	Signals.on_exit_water.connect(on_water_exit)
 	player.main_coll_shape_2d.shape.size.x = player.swim_shape
 
 func exit() -> void:
-	Signals.on_exit_water.disconnect(on_water_exit)
+	pass
 
 func physics_update(_delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
@@ -32,9 +29,3 @@ func physics_update(_delta: float) -> void:
 
 	# Animation
 	player.sprite.play("swim")
-
-func on_water_exit(area : Area2D) -> void:
-	if area.is_in_group("player"):
-		player.is_in_water = false
-		player.velocity.y = BOOST
-		player.change_state(player.normal_state)

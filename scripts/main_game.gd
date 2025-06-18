@@ -3,4 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	LevelManager.load_current_level(self)
+	# Set a global reference of the 'Levels' node in 'Main_Game' scence on game start-up .
+	Global.set_levels_reference($Levels)
+	# Load first level
+	LevelManager.load_level(0, Global.levels)
