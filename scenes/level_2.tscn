@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1gi27lu2fy3h"]
+[gd_scene load_steps=20 format=3 uid="uid://b1gi27lu2fy3h"]
 
 [ext_resource type="Script" uid="uid://bg71ttdi7in1d" path="res://scripts/Level/level_base.gd" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://cuql5c5igdgge" path="res://assets/Terrain/Terrain (16x16).png" id="2_2y5yt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cubp62c4ho37x" path="res://scenes/player.tscn" id="4_go7sj"]
 [ext_resource type="PackedScene" uid="uid://bklebwnwgkgd7" path="res://scenes/platform.tscn" id="5_7gny6"]
 [ext_resource type="PackedScene" uid="uid://cwu7s7kx0bf30" path="res://scenes/pineapple.tscn" id="6_2aecg"]
+[ext_resource type="Script" uid="uid://clqgnw4asimu5" path="res://scripts/Objects/pineapples.gd" id="6_hey2k"]
 [ext_resource type="PackedScene" uid="uid://bgej6e06ngyx" path="res://scenes/killzone.tscn" id="7_6dial"]
 [ext_resource type="PackedScene" uid="uid://dnhdrmdgoxhr7" path="res://scenes/tramp.tscn" id="8_7nomh"]
 [ext_resource type="PackedScene" uid="uid://83ehdlg1xast" path="res://scenes/next_level_door.tscn" id="9_1s4pk"]
@@ -290,6 +291,7 @@ libraries = {
 autoplay = "up_down"
 
 [node name="pineapples" type="Node" parent="."]
+script = ExtResource("6_hey2k")
 
 [node name="pineapple" parent="pineapples" instance=ExtResource("6_2aecg")]
 position = Vector2(236, -300)

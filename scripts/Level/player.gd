@@ -56,11 +56,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	apply_dust()
-	if Global.life <= 0:
-		change_state(dead_state)
-	else:
-		current_state.physics_update(delta)
-		move_and_slide()
+	current_state.physics_update(delta)
+	move_and_slide()
 
 func change_state(new_state: BaseState) -> void:
 	if current_state == new_state:

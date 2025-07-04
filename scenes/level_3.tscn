@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://fbyngqxbwdeh"]
+[gd_scene load_steps=20 format=3 uid="uid://fbyngqxbwdeh"]
 
 [ext_resource type="Script" uid="uid://bg71ttdi7in1d" path="res://scripts/Level/level_base.gd" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://cuql5c5igdgge" path="res://assets/Terrain/Terrain (16x16).png" id="2_2y5yt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://jevh8fqhjr42" path="res://scenes/spikes.tscn" id="8_wae8j"]
 [ext_resource type="PackedScene" uid="uid://cwu7s7kx0bf30" path="res://scenes/pineapple.tscn" id="9_ha73p"]
 [ext_resource type="PackedScene" uid="uid://bklebwnwgkgd7" path="res://scenes/platform.tscn" id="10_56dhn"]
+[ext_resource type="Script" uid="uid://clqgnw4asimu5" path="res://scripts/Objects/pineapples.gd" id="10_p3r0x"]
 [ext_resource type="PackedScene" uid="uid://dnhdrmdgoxhr7" path="res://scenes/tramp.tscn" id="11_ax3dk"]
 [ext_resource type="PackedScene" uid="uid://83ehdlg1xast" path="res://scenes/next_level_door.tscn" id="12_ax3dk"]
 [ext_resource type="PackedScene" uid="uid://cxdo68a4isbh7" path="res://scenes/hanging_saw.tscn" id="13_q2dsb"]
@@ -359,6 +360,7 @@ position = Vector2(713, -114)
 position = Vector2(729, -114)
 
 [node name="pineapples" type="Node" parent="."]
+script = ExtResource("10_p3r0x")
 
 [node name="Area2D" parent="pineapples" instance=ExtResource("9_ha73p")]
 position = Vector2(792, -51)
@@ -436,7 +438,10 @@ position = Vector2(553, -383)
 [node name="platform5" parent="platforms" instance=ExtResource("10_56dhn")]
 position = Vector2(553, -153)
 
-[node name="saw" parent="." instance=ExtResource("13_q2dsb")]
+[node name="hanging_saw" parent="." instance=ExtResource("13_q2dsb")]
 position = Vector2(162, -206)
+
+[node name="hanging_saw_2" parent="." instance=ExtResource("13_q2dsb")]
+position = Vector2(553, -274)
 
 [editable path="water"]

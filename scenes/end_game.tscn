@@ -1,0 +1,157 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbsyght7i03ux"]
+
+[ext_resource type="Texture2D" uid="uid://p15k6o8t5ft2" path="res://assets/Background/Green.png" id="1_0o8ri"]
+[ext_resource type="Script" uid="uid://d3j1hm6uhjeye" path="res://scripts/UI/end_game/end_game.gd" id="1_6lcay"]
+[ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="2_nyuqq"]
+[ext_resource type="Script" uid="uid://dr3oufxp5fbp2" path="res://scripts/UI/end_game/next_page.gd" id="5_0h6i1"]
+[ext_resource type="StyleBox" uid="uid://cbay6nff2yesp" path="res://resources/square _button_down.tres" id="6_guec8"]
+[ext_resource type="StyleBox" uid="uid://078325o7bypg" path="res://resources/square _button_up.tres" id="7_do1vb"]
+
+[sub_resource type="Shader" id="Shader_fcv5n"]
+code = "shader_type canvas_item;
+
+
+uniform sampler2D texture_albedo : source_color, repeat_enable;
+uniform vec2 tiling = vec2(1.0,1.0);
+uniform vec2 offset;
+void vertex() {
+	UV = UV * tiling + offset * TIME;	
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxjfj"]
+shader = SubResource("Shader_fcv5n")
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(0.5, 0.5)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6lcay")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_nxjfj")
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 780.0
+texture = ExtResource("1_0o8ri")
+stretch_mode = 1
+
+[node name="pine_collect_score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 226.0
+offset_right = 456.0
+offset_bottom = 249.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 20
+text = "Pineapples collected score : 0"
+
+[node name="deaths" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 259.0
+offset_right = 310.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 20
+text = "Deaths: 0
+"
+
+[node name="score_multi" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 334.0
+offset_right = 310.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 20
+text = "Score multiplayer: 0"
+
+[node name="no_death_bonus" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 296.0
+offset_right = 310.0
+offset_bottom = 319.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 20
+text = "No death bonus: 0"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(151, 346)
+points = PackedVector2Array(-4, 28, 583, 27)
+
+[node name="total_score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 391.0
+offset_right = 297.0
+offset_bottom = 414.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 20
+text = "Total score: 0"
+
+[node name="your_name" type="Label" parent="."]
+layout_mode = 2
+offset_left = 132.0
+offset_top = 429.0
+offset_right = 411.0
+offset_bottom = 479.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 50
+text = "Your name:"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 473.0
+offset_top = 435.0
+offset_right = 681.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "(Optional)"
+
+[node name="next_button" type="Button" parent="."]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
+offset_left = 1131.0
+offset_top = 635.0
+offset_right = 1221.0
+offset_bottom = 725.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = ExtResource("6_guec8")
+theme_override_styles/hover = ExtResource("7_do1vb")
+theme_override_styles/pressed = ExtResource("6_guec8")
+theme_override_styles/normal = ExtResource("7_do1vb")
+script = ExtResource("5_0h6i1")
+
+[node name="Label" type="Label" parent="next_button"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 3.0
+offset_right = 73.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("2_nyuqq")
+theme_override_font_sizes/font_size = 60
+text = ">"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="next_button" to="next_button" method="_on_button_down"]
+[connection signal="button_up" from="next_button" to="next_button" method="_on_button_up"]
+[connection signal="pressed" from="next_button" to="next_button" method="_on_pressed"]

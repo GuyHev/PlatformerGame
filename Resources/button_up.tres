@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://lhofj3uhtrrs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1itru"]
+load_path = "res://.godot/imported/GUI.png-4c91dd011fdcaefc5a4eb138b5d67ab6.ctex"
+
+[resource]
+texture = SubResource("CompressedTexture2D_1itru")
+region_rect = Rect2(145, 81, 46, 14)

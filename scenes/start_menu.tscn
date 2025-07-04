@@ -1,0 +1,151 @@
+[gd_scene load_steps=12 format=3 uid="uid://bfmu5s1l0unir"]
+
+[ext_resource type="Texture2D" uid="uid://p15k6o8t5ft2" path="res://assets/Background/Green.png" id="1_thu50"]
+[ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="2_h61rw"]
+[ext_resource type="StyleBox" uid="uid://lhofj3uhtrrs" path="res://resources/button_up.tres" id="2_thu50"]
+[ext_resource type="StyleBox" uid="uid://dqbjfscqwuinv" path="res://resources/button_down.tres" id="3_m7x51"]
+[ext_resource type="Script" uid="uid://c404g7hpbw3no" path="res://scripts/UI/start_menu/start_button.gd" id="5_fcv5n"]
+[ext_resource type="StyleBox" uid="uid://078325o7bypg" path="res://resources/square _button_up.tres" id="6_nxjfj"]
+[ext_resource type="StyleBox" uid="uid://cbay6nff2yesp" path="res://resources/square _button_down.tres" id="6_u4qax"]
+[ext_resource type="Script" uid="uid://2oodhmbvkunf" path="res://scripts/UI/start_menu/left_arrow_button.gd" id="9_5byqq"]
+[ext_resource type="Script" uid="uid://clhdvejpkvsjg" path="res://scripts/UI/start_menu/right_arrow_button.gd" id="10_e58y3"]
+
+[sub_resource type="Shader" id="Shader_fcv5n"]
+code = "shader_type canvas_item;
+
+
+uniform sampler2D texture_albedo : source_color, repeat_enable;
+uniform vec2 tiling = vec2(1.0,1.0);
+uniform vec2 offset;
+void vertex() {
+	UV = UV * tiling + offset * TIME;	
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxjfj"]
+shader = SubResource("Shader_fcv5n")
+shader_parameter/tiling = Vector2(1, 1)
+shader_parameter/offset = Vector2(0.5, 0.5)
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_nxjfj")
+layout_mode = 2
+texture = ExtResource("1_thu50")
+stretch_mode = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="start_button" type="Button" parent="BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_h61rw")
+theme_override_styles/hover_pressed = ExtResource("3_m7x51")
+theme_override_styles/hover = ExtResource("2_thu50")
+theme_override_styles/pressed = ExtResource("3_m7x51")
+theme_override_styles/normal = ExtResource("2_thu50")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_fcv5n")
+
+[node name="Label" type="Label" parent="BoxContainer/VBoxContainer/start_button"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 19.0
+offset_right = 220.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_h61rw")
+theme_override_font_sizes/font_size = 50
+text = "start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="left_arrow" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = ExtResource("6_u4qax")
+theme_override_styles/hover = ExtResource("6_nxjfj")
+theme_override_styles/pressed = ExtResource("6_u4qax")
+theme_override_styles/normal = ExtResource("6_nxjfj")
+script = ExtResource("9_5byqq")
+
+[node name="Label" type="Label" parent="BoxContainer/VBoxContainer/HBoxContainer/left_arrow"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 4.0
+offset_right = 66.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_h61rw")
+theme_override_font_sizes/font_size = 60
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="difficulty" type="Label" parent="BoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_h61rw")
+theme_override_font_sizes/font_size = 45
+text = "Easy"
+horizontal_alignment = 1
+
+[node name="right_arrow" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed = ExtResource("6_u4qax")
+theme_override_styles/hover = ExtResource("6_nxjfj")
+theme_override_styles/pressed = ExtResource("6_u4qax")
+theme_override_styles/normal = ExtResource("6_nxjfj")
+script = ExtResource("10_e58y3")
+
+[node name="Label" type="Label" parent="BoxContainer/VBoxContainer/HBoxContainer/right_arrow"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 3.0
+offset_right = 73.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("2_h61rw")
+theme_override_font_sizes/font_size = 60
+text = ">"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="BoxContainer/VBoxContainer/start_button" to="BoxContainer/VBoxContainer/start_button" method="_on_button_down"]
+[connection signal="button_up" from="BoxContainer/VBoxContainer/start_button" to="BoxContainer/VBoxContainer/start_button" method="_on_button_up"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/start_button" to="BoxContainer/VBoxContainer/start_button" method="_on_pressed"]
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer/left_arrow" to="BoxContainer/VBoxContainer/HBoxContainer/left_arrow" method="_on_button_down"]
+[connection signal="button_up" from="BoxContainer/VBoxContainer/HBoxContainer/left_arrow" to="BoxContainer/VBoxContainer/HBoxContainer/left_arrow" method="_on_button_up"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/HBoxContainer/left_arrow" to="BoxContainer/VBoxContainer/HBoxContainer/left_arrow" method="_on_pressed"]
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer/right_arrow" to="BoxContainer/VBoxContainer/HBoxContainer/right_arrow" method="_on_button_down"]
+[connection signal="button_up" from="BoxContainer/VBoxContainer/HBoxContainer/right_arrow" to="BoxContainer/VBoxContainer/HBoxContainer/right_arrow" method="_on_button_up"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/HBoxContainer/right_arrow" to="BoxContainer/VBoxContainer/HBoxContainer/right_arrow" method="_on_pressed"]

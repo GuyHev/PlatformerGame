@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://1u2iidrhp6my"]
+[gd_scene load_steps=7 format=3 uid="uid://1u2iidrhp6my"]
 
-[ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/UI/pineapple_label.gd" id="1_5en4g"]
-[ext_resource type="FontFile" uid="uid://3eyby7pentyu" path="res://assets/Fonts/pixel font.ttf" id="1_75u2n"]
-[ext_resource type="Script" uid="uid://dyfj2tg16473t" path="res://scripts/UI/life_label.gd" id="2_ro3t7"]
+[ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/UI/HUD/pineapple_label.gd" id="1_5en4g"]
+[ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="1_nysna"]
+[ext_resource type="Script" uid="uid://dyfj2tg16473t" path="res://scripts/UI/HUD/life_label.gd" id="2_ro3t7"]
 [ext_resource type="Texture2D" uid="uid://d24537nxv3k5c" path="res://assets/Custom made/Pineapple_icon.png" id="2_ua6yw"]
 [ext_resource type="Texture2D" uid="uid://drfl8rg2eq8bi" path="res://assets/Custom made/heart.png" id="4_75u2n"]
+[ext_resource type="Script" uid="uid://cm8hoo8cq2vtm" path="res://scripts/UI/HUD/score_label.gd" id="6_f6qnu"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,8 +17,8 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 248.0
-offset_bottom = 168.0
+offset_right = 976.0
+offset_bottom = 96.0
 color = Color(1, 1, 1, 0)
 
 [node name="pineapple_label" type="Label" parent="ColorRect"]
@@ -26,7 +27,7 @@ offset_left = 64.0
 offset_top = 24.0
 offset_right = 264.0
 offset_bottom = 55.0
-theme_override_fonts/font = ExtResource("1_75u2n")
+theme_override_fonts/font = ExtResource("1_nysna")
 theme_override_font_sizes/font_size = 30
 text = "Pineapples : 0"
 script = ExtResource("1_5en4g")
@@ -46,7 +47,7 @@ offset_left = 360.0
 offset_top = 24.0
 offset_right = 560.0
 offset_bottom = 89.0
-theme_override_fonts/font = ExtResource("1_75u2n")
+theme_override_fonts/font = ExtResource("1_nysna")
 theme_override_font_sizes/font_size = 30
 text = "Tries Left : 3
 "
@@ -59,3 +60,14 @@ offset_right = 416.0
 offset_bottom = 96.0
 texture = ExtResource("4_75u2n")
 expand_mode = 1
+
+[node name="score_label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 24.0
+offset_right = 712.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("1_nysna")
+theme_override_font_sizes/font_size = 30
+text = "score : 0"
+script = ExtResource("6_f6qnu")

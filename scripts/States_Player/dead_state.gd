@@ -1,9 +1,27 @@
 extends BaseState
 
+var gravity = 900.0
+
 func enter(_prev_state: BaseState) -> void:
-	#player.sprite.play("dead")
-	Global.life = 3
-	Global.picked_pineapples = 0
-	#player.get_tree().reload_current_scene()
-	LevelManager.reload_current_level(Global.levels)
-	player.current_state = player.normal_state
+	player.collision_layer = false
+	player.collision_mask = false
+	player.sprite.play("dead")
+	player.velocity = Vector2(0, -300)
+	#Global.picked_pineapples = 0
+	
+	# Timer Section
+	var timer := Timer.new()
+	timer.wait_time = 2.0
+	timer.one_shot = true
+	add_child(timer)  # Add it to the current scene or a node like player
+	timer.timeout.connect(_on_death_timer_timeout)
+	timer.start()
+	
+func physics_update(delta: float) -> void:
+	player.velocity.y += gravity * delta  # apply gravity
+	player.move_and_slide()  
+	
+func _on_death_timer_timeout():
+		Global.set_life()
+		LevelManager.reload_current_level(Global.levels) # This also resets collision_layer and collision_mask back to true
+		player.current_state = player.normal_state
