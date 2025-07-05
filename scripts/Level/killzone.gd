@@ -6,9 +6,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Global.life -= 1
 		if(Global.life <= 0):
-			#LevelManager.reload_current_level(Global.levels)
+			Global.deaths += 1
 			Global.set_life()
-			#Global.picked_pineapples = 0
 		LevelManager.reload_current_level(Global.levels)
 		timer.start()
 

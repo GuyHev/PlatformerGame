@@ -3,7 +3,8 @@ extends Node
 var levels = [
 	"uid://pdr763i84nx1",
 	"uid://b1gi27lu2fy3h",
-	"uid://fbyngqxbwdeh"
+	"uid://fbyngqxbwdeh",
+	"uid://bbsyght7i03ux"
 ]
 var current_level_index: int = 0
 var current_level: Node = null
@@ -34,4 +35,4 @@ func load_next_level(levels_container: Node) -> void:
 		Global.collected_pineapples.clear()
 		load_level(current_level_index + 1, levels_container)
 	else:
-		print("no levels + final score is: %d" % Global.get_final_score())
+		return

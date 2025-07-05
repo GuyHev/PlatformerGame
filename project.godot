@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 Global="*res://scripts/Autoloads/Global.gd"
 LevelManager="*res://scripts/Autoloads/Level_Manager.gd"
 Signals="*res://scripts/Autoloads/signals.gd"
+api="*res://scripts/Autoloads/api_handle.gd"
 
 [display]
 

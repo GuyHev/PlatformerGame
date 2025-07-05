@@ -12,6 +12,7 @@ var position = Vector2.ZERO  # Store player's position data
 var levels: Node = null
 var difficulty_index = 0
 var score = 0
+var deaths = 0
 var collected_pineapples := {} 
 
 func set_levels_reference(node: Node) -> void:
@@ -28,5 +29,6 @@ func select_difficulty(number: int)-> void:
 func set_life() -> void:
 	life = difficulty[difficulty_index].life
 	
-func get_final_score() -> int:
-	return score * difficulty[difficulty_index].score_modifier
+func get_total() -> int:
+	var modifier = difficulty[difficulty_index].score_modifier
+	return score * modifier
