@@ -4,7 +4,8 @@ var levels = [
 	"uid://pdr763i84nx1",
 	"uid://b1gi27lu2fy3h",
 	"uid://fbyngqxbwdeh",
-	"uid://bbsyght7i03ux"
+	"uid://bbsyght7i03ux",
+	"leaderboard add later"
 ]
 var current_level_index: int = 0
 var current_level: Node = null
@@ -32,7 +33,14 @@ func reload_current_level(levels_container: Node) -> void:
 
 func load_next_level(levels_container: Node) -> void:
 	if current_level_index + 1 < levels.size():
-		Global.collected_pineapples.clear()
+		#------------------------------------------
+		Global.pineapples_in_level.clear()
+		#------------------------------------------
 		load_level(current_level_index + 1, levels_container)
 	else:
 		return
+		
+func load_end_scene(levels_container: Node) -> void:
+	print(levels.size())
+	current_level_index = levels.size() - 2
+	load_level(current_level_index, levels_container)

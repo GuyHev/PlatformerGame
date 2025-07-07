@@ -11,6 +11,6 @@ func _ready() -> void:
 	get_tree().root.get_node("Main_Game/GUI").visible = false
 	pine_collect_score.text = "Pineapples collected score : " + str(Global.score)
 	deaths.text = "Deaths : " + str(Global.deaths)
-	no_death_bonus.text =  "No death bonus : Yes" if Global.deaths == 0 else "No death bonus: No"
+	no_death_bonus.text = "No death bonus: " + str(Global.get_no_death_bonus())
 	score_multi.text = "Score multiplayer : x" + str(Global.difficulty[Global.difficulty_index].score_modifier)
 	total_score.text = "Total score : " + str(Global.get_total())

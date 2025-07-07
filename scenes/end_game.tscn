@@ -67,10 +67,10 @@ text = "Pineapples collected score : 0"
 
 [node name="deaths" type="Label" parent="."]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 256.0
-offset_right = 242.0
-offset_bottom = 319.0
+offset_left = 89.0
+offset_top = 312.0
+offset_right = 243.0
+offset_bottom = 375.0
 theme_override_fonts/font = ExtResource("2_nyuqq")
 theme_override_font_sizes/font_size = 30
 text = "Deaths: 0
@@ -78,10 +78,10 @@ text = "Deaths: 0
 
 [node name="score_multi" type="Label" parent="."]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 368.0
-offset_right = 397.0
-offset_bottom = 398.0
+offset_left = 87.0
+offset_top = 256.0
+offset_right = 396.0
+offset_bottom = 286.0
 theme_override_fonts/font = ExtResource("2_nyuqq")
 theme_override_font_sizes/font_size = 30
 text = "Score multiplayer: 0"
@@ -89,9 +89,9 @@ text = "Score multiplayer: 0"
 [node name="no_death_bonus" type="Label" parent="."]
 layout_mode = 0
 offset_left = 88.0
-offset_top = 312.0
+offset_top = 367.0
 offset_right = 354.0
-offset_bottom = 342.0
+offset_bottom = 397.0
 theme_override_fonts/font = ExtResource("2_nyuqq")
 theme_override_font_sizes/font_size = 30
 text = "No death bonus: 0"

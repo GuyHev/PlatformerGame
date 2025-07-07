@@ -4,8 +4,13 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		if Global.difficulty[Global.difficulty_index].name == "Nightmare":
+			Global.deaths += 1
+			LevelManager.load_end_scene(Global.levels)
+			return
+		
 		Global.life -= 1
-		if(Global.life <= 0):
+		if Global.life <= 0:
 			Global.deaths += 1
 			Global.set_life()
 		LevelManager.reload_current_level(Global.levels)

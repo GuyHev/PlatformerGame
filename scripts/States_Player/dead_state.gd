@@ -22,6 +22,9 @@ func physics_update(delta: float) -> void:
 	
 func _on_death_timer_timeout():
 		Global.deaths += 1
+		if Global.difficulty[Global.difficulty_index].name == "Nightmare":
+			LevelManager.load_end_scene(Global.levels)
+			return
 		Global.set_life()
 		LevelManager.reload_current_level(Global.levels) # This also resets collision_layer and collision_mask back to true
 		player.current_state = player.normal_state

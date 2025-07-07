@@ -1,19 +1,21 @@
 extends Node
 
 var difficulty = [
-	{"name":"Easy", "life":3, "pineapple_score":100, "score_modifier":1},
+	{"name":"Easy", "life":5, "pineapple_score":100, "score_modifier":1},
 	{"name":"Normal", "life":3, "pineapple_score":200, "score_modifier":1.5},
 	{"name":"Hard", "life":1, "pineapple_score":300, "score_modifier":2},
 	{"name":"Nightmare", "life":1, "pineapple_score":300, "score_modifier":4}
 ]
-var pineapples_left = 0
+
+var difficulty_index = 0
 var life = 3
 var position = Vector2.ZERO  # Store player's position data 
-var levels: Node = null
-var difficulty_index = 0
+var levels: Node = null # Refrence to the level's node in Main_Game scene
 var score = 0
 var deaths = 0
-var collected_pineapples := {} 
+var pineapples_in_level := {} 
+var pineapples_left = 0
+var pineapples_collected = 0
 
 func set_levels_reference(node: Node) -> void:
 	levels = node
@@ -31,4 +33,12 @@ func set_life() -> void:
 	
 func get_total() -> int:
 	var modifier = difficulty[difficulty_index].score_modifier
-	return score * modifier
+	var bonus = get_no_death_bonus()
+	return score * modifier + bonus
+	
+func get_no_death_bonus() -> int:
+	if deaths != 0:
+		return 0
+	var modifier = difficulty[difficulty_index].score_modifier
+	var pineapple_value = difficulty[difficulty_index].pineapple_score
+	return pineapple_value * pineapples_collected * (modifier * 0.5)
