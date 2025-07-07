@@ -10,4 +10,4 @@ func _process(_delta: float) -> void:
 	update_pineapple_text()
 
 func update_pineapple_text() -> void:
-	pineapple_label.text = "Pineapples: %d" % Global.pineapples_left
+	pineapple_label.text = "Pineapples left: %d" % Global.pineapples_left
