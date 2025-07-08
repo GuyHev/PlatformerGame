@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbsyght7i03ux"]
+[gd_scene load_steps=16 format=3 uid="uid://bbsyght7i03ux"]
 
 [ext_resource type="Texture2D" uid="uid://p15k6o8t5ft2" path="res://assets/Background/Green.png" id="1_0o8ri"]
 [ext_resource type="Script" uid="uid://d3j1hm6uhjeye" path="res://scripts/UI/end_game/end_game.gd" id="1_6lcay"]
@@ -10,6 +10,7 @@
 [ext_resource type="StyleBox" uid="uid://lhofj3uhtrrs" path="res://resources/button_up.tres" id="8_nyuqq"]
 [ext_resource type="Script" uid="uid://cll1g2nyk7ilj" path="res://scripts/UI/end_game/upload_score.gd" id="9_q85lp"]
 [ext_resource type="Script" uid="uid://dxabvrwbof3o8" path="res://scripts/UI/end_game/confirmation_dialog.gd" id="10_nyuqq"]
+[ext_resource type="PackedScene" uid="uid://dnjie45ksny2i" path="res://scenes/leaderboard.tscn" id="11_q85lp"]
 
 [sub_resource type="Shader" id="Shader_fcv5n"]
 code = "shader_type canvas_item;
@@ -36,6 +37,10 @@ void fragment() {
 shader = SubResource("Shader_fcv5n")
 shader_parameter/tiling = Vector2(1, 1)
 shader_parameter/offset = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q85lp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pi6op"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -119,6 +124,7 @@ offset_top = 635.0
 offset_right = 1221.0
 offset_bottom = 725.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q85lp")
 theme_override_styles/hover_pressed = ExtResource("6_guec8")
 theme_override_styles/hover = ExtResource("7_do1vb")
 theme_override_styles/pressed = ExtResource("6_guec8")
@@ -143,6 +149,7 @@ offset_left = 62.0
 offset_top = 635.0
 offset_right = 499.0
 offset_bottom = 725.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pi6op")
 theme_override_styles/hover_pressed = ExtResource("7_0o8ri")
 theme_override_styles/hover = ExtResource("8_nyuqq")
 theme_override_styles/pressed = ExtResource("7_0o8ri")
@@ -177,6 +184,12 @@ offset_bottom = 58.0
 theme_override_fonts/font = ExtResource("2_nyuqq")
 theme_override_font_sizes/font_size = 30
 placeholder_text = "Your name"
+
+[node name="leaderboard" parent="." instance=ExtResource("11_q85lp")]
+offset_left = 1044.0
+offset_top = 51.0
+offset_right = 1262.0
+offset_bottom = 51.0
 
 [connection signal="button_down" from="next_button" to="next_button" method="_on_button_down"]
 [connection signal="button_up" from="next_button" to="next_button" method="_on_button_up"]

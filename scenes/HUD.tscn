@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1u2iidrhp6my"]
+[gd_scene load_steps=12 format=3 uid="uid://1u2iidrhp6my"]
 
 [ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/UI/HUD/pineapple_label.gd" id="1_5en4g"]
 [ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="1_nysna"]
@@ -12,6 +12,8 @@
 
 [sub_resource type="Theme" id="Theme_8cuoo"]
 default_font = ExtResource("1_nysna")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cuoo"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -80,11 +82,13 @@ script = ExtResource("6_f6qnu")
 
 [node name="info" type="Button" parent="."]
 custom_minimum_size = Vector2(90, 90)
+layout_mode = 0
 offset_left = 1177.0
 offset_top = 12.0
 offset_right = 1267.0
 offset_bottom = 102.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8cuoo")
 theme_override_styles/hover_pressed = ExtResource("7_8cuoo")
 theme_override_styles/hover = ExtResource("8_cf6ij")
 theme_override_styles/pressed = ExtResource("7_8cuoo")

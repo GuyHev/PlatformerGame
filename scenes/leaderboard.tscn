@@ -1,0 +1,158 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnjie45ksny2i"]
+
+[ext_resource type="Script" uid="uid://c8ls703ygi4mr" path="res://scripts/UI/end_game/leaderboard.gd" id="1_mrg81"]
+[ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="2_wgq7h"]
+
+[node name="leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 262.0
+offset_bottom = 490.0
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 20
+columns = 2
+script = ExtResource("1_mrg81")
+
+[node name="name" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "Name"
+
+[node name="score" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "Score"
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label5" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label6" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label7" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label8" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label9" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label10" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label11" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label12" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label13" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label14" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label15" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label16" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label17" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label18" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label19" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label20" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label21" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Label22" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wgq7h")
+theme_override_font_sizes/font_size = 25
+text = "null"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-161, -77)
+points = PackedVector2Array(264, 91, 264, 568)
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(7, 46, 195, 46)
