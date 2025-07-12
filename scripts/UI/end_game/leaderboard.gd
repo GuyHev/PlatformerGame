@@ -66,7 +66,3 @@ func fill_arrays(xml_bytes : PackedByteArray) -> void:
 					inside_entry = false
 					names.append(current_name)
 					scores.append(current_score)
-
-	# Now you have two arrays with the top scores data
-	print("Names:", names)
-	print("Scores:", scores)

@@ -6,11 +6,11 @@ var difficulty = [
 	{"name":"Hard", "life":1, "pineapple_score":300, "score_modifier":2},
 	{"name":"Nightmare", "life":1, "pineapple_score":300, "score_modifier":4}
 ]
-
+var levels: Node = null # Refrence to the level's node in Main_Game scene
+var transition : CanvasLayer = null # Refrence to the transition's node in Main_Game scene
 var difficulty_index = 0
 var life = 3
 var position = Vector2.ZERO  # Store player's position data 
-var levels: Node = null # Refrence to the level's node in Main_Game scene
 var score = 0
 var deaths = 0
 var pineapples_in_level := {} 
@@ -19,6 +19,9 @@ var pineapples_collected = 0
 
 func set_levels_reference(node: Node) -> void:
 	levels = node
+
+func set_transition_reference(node: CanvasLayer) -> void:
+	transition = node
 	
 # This functions integer as argument (0 - decrement, 1 - increment)
 func select_difficulty(number: int)-> void:
