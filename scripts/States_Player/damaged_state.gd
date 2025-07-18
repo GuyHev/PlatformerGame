@@ -7,6 +7,7 @@ var knockback_velocity = Vector2.ZERO
 
 func enter(_prev_state: BaseState) -> void:	
 	timer = KNOCKBACK_DURATION
+	SoundPlayer.play_sfx(preload("uid://dppdqdp64vu74"))
 	player.sprite.play("hit")
 	Global.life -= 1
 	

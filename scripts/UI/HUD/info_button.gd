@@ -5,6 +5,7 @@ extends Button
 
 
 func _on_pressed() -> void:
+	SoundPlayer.play_sfx(preload("uid://6f5s0t2k7h2u"))
 	accept_dialog.visible = true
 	
 func _on_button_down() -> void:

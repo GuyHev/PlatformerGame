@@ -198,4 +198,5 @@ offset_bottom = 53.0
 [connection signal="button_down" from="upload_score" to="upload_score" method="_on_button_down"]
 [connection signal="button_up" from="upload_score" to="upload_score" method="_on_button_up"]
 [connection signal="pressed" from="upload_score" to="upload_score" method="_on_pressed"]
+[connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]
 [connection signal="confirmed" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_confirmed"]

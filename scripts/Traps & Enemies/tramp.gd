@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and (not is_bouncing):
 		if body.velocity.y >= 0:
 			body.velocity.y = BOUNCE_VELOCITY
+			SoundPlayer.play_sfx(preload("uid://cgodxkonv8x6"))
 			sprite.play("on jump")
 			is_bouncing = true
 

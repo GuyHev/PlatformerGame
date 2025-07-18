@@ -4,6 +4,7 @@ extends Button
 @onready var difficulty: Label = $"../difficulty"
 
 func _on_pressed() -> void:
+	SoundPlayer.play_sfx(preload("uid://cwc71poi53v2i"))
 	Global.select_difficulty(0)
 	difficulty.text = Global.difficulty[Global.difficulty_index].name
 	

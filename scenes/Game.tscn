@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlbuqxrtjexbe"]
+[gd_scene load_steps=6 format=3 uid="uid://dlbuqxrtjexbe"]
 
 [ext_resource type="Script" uid="uid://o0o5yuuec682" path="res://scripts/main_game.gd" id="1_s0nni"]
 [ext_resource type="PackedScene" uid="uid://1u2iidrhp6my" path="res://scenes/HUD.tscn" id="2_3xj3m"]
 [ext_resource type="PackedScene" uid="uid://bfmu5s1l0unir" path="res://scenes/start_menu.tscn" id="3_78awf"]
 [ext_resource type="PackedScene" uid="uid://dlh6702pprhhl" path="res://scenes/transition.tscn" id="3_cpr0p"]
+[ext_resource type="Script" uid="uid://by4yyj8gwgahb" path="res://scripts/Autoloads/Sound_Player.gd" id="3_s0nni"]
 
 [node name="Main_Game" type="Node2D"]
 script = ExtResource("1_s0nni")
@@ -16,6 +17,7 @@ offset_right = 407.0
 offset_bottom = 464.0
 
 [node name="Main_Menu" type="CanvasLayer" parent="."]
+script = ExtResource("3_s0nni")
 
 [node name="start_menu" parent="Main_Menu" instance=ExtResource("3_78awf")]
 

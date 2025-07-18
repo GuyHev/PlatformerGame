@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://1u2iidrhp6my"]
+[gd_scene load_steps=14 format=3 uid="uid://1u2iidrhp6my"]
 
 [ext_resource type="Script" uid="uid://drmfpol84qb4w" path="res://scripts/UI/HUD/pineapple_label.gd" id="1_5en4g"]
 [ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="1_nysna"]
@@ -10,6 +10,7 @@
 [ext_resource type="StyleBox" uid="uid://078325o7bypg" path="res://resources/square _button_up.tres" id="8_cf6ij"]
 [ext_resource type="Script" uid="uid://cajmq5aof7rdj" path="res://scripts/UI/HUD/info_button.gd" id="9_8cuoo"]
 [ext_resource type="Theme" uid="uid://bed6gmmwlu6th" path="res://resources/UI_dialog.tres" id="10_cf6ij"]
+[ext_resource type="Script" uid="uid://87fahmoybi3j" path="res://scripts/UI/HUD/accept_dialog.gd" id="11_meimr"]
 
 [sub_resource type="Theme" id="Theme_8cuoo"]
 default_font = ExtResource("1_nysna")
@@ -118,7 +119,10 @@ Movement - use W / A / S / D or the Arrow Keys to move on land and in water.
 Jump - W / SPACEBAR / Arrow Up.
 Difficulty - EasY / Normal / Hard - Respawn at the start of the level.
 Nightmare mode - One life, one shot, no respawns."
+script = ExtResource("11_meimr")
 
 [connection signal="button_down" from="info" to="info" method="_on_button_down"]
 [connection signal="button_up" from="info" to="info" method="_on_button_up"]
 [connection signal="pressed" from="info" to="info" method="_on_pressed"]
+[connection signal="canceled" from="AcceptDialog" to="AcceptDialog" method="_on_canceled"]
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_confirmed"]

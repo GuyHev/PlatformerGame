@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	if not Global.pineapples_in_level.has(key):
+		SoundPlayer.play_sfx(preload("uid://bpgpfoafrfmfk"))
 		Global.pineapples_in_level[key] = true
 		Global.pineapples_left -= 1
 		Global.pineapples_collected += 1

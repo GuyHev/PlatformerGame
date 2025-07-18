@@ -26,6 +26,7 @@ func physics_update(delta: float) -> void:
 
 	# Jumping
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
+		SoundPlayer.play_sfx(preload("uid://b1iklcb84i3dq"))
 		player.velocity.y = jump_velocity
 
 	# Animation

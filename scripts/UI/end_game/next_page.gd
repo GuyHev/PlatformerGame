@@ -3,6 +3,7 @@ extends Button
 @onready var label: Label = $Label
 
 func _on_pressed() -> void:
+	SoundPlayer.play_sfx(preload("uid://6f5s0t2k7h2u"))
 	var transition = Global.transition
 	await transition.fade_in()
 	LevelManager.clear_levels(Global.levels)
