@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://cwu7s7kx0bf30"]
 
-[ext_resource type="Script" uid="uid://wmudoag2b8si" path="res://scripts/pineapple.gd" id="1_dakpr"]
+[ext_resource type="Script" uid="uid://wmudoag2b8si" path="res://scripts/Objects/pineapple.gd" id="1_dakpr"]
 [ext_resource type="Texture2D" uid="uid://tkwbvrooioo0" path="res://assets/Items/Fruits/Pineapple.png" id="1_jg5nk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dakpr"]
