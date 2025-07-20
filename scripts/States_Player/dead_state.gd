@@ -4,7 +4,9 @@ var gravity = 900.0
 
 func enter(_prev_state: BaseState) -> void:
 	player.collision_layer = false
+	player.get_node("Area2D").collision_layer = false
 	player.collision_mask = false
+	player.get_node("Area2D").collision_mask = false
 	SoundPlayer.play_sfx(preload("uid://1jgwatjjhmav"))
 	player.sprite.play("dead")
 	player.velocity = Vector2(0, -300)

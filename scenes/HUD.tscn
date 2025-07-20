@@ -109,7 +109,7 @@ text = "?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
+[node name="AcceptDialog" type="AcceptDialog" parent="info"]
 title = "Information"
 initial_position = 2
 size = Vector2i(647, 200)
@@ -124,5 +124,5 @@ script = ExtResource("11_meimr")
 [connection signal="button_down" from="info" to="info" method="_on_button_down"]
 [connection signal="button_up" from="info" to="info" method="_on_button_up"]
 [connection signal="pressed" from="info" to="info" method="_on_pressed"]
-[connection signal="canceled" from="AcceptDialog" to="AcceptDialog" method="_on_canceled"]
-[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_confirmed"]
+[connection signal="canceled" from="info/AcceptDialog" to="info/AcceptDialog" method="_on_canceled"]
+[connection signal="confirmed" from="info/AcceptDialog" to="info/AcceptDialog" method="_on_confirmed"]

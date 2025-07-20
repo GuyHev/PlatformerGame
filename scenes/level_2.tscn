@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1gi27lu2fy3h"]
+[gd_scene load_steps=21 format=3 uid="uid://b1gi27lu2fy3h"]
 
 [ext_resource type="Script" uid="uid://bg71ttdi7in1d" path="res://scripts/Level/level_base.gd" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://cuql5c5igdgge" path="res://assets/Terrain/Terrain (16x16).png" id="2_2y5yt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://clqgnw4asimu5" path="res://scripts/Objects/pineapples.gd" id="6_hey2k"]
 [ext_resource type="PackedScene" uid="uid://bgej6e06ngyx" path="res://scenes/killzone.tscn" id="7_6dial"]
 [ext_resource type="PackedScene" uid="uid://dnhdrmdgoxhr7" path="res://scenes/tramp.tscn" id="8_7nomh"]
+[ext_resource type="PackedScene" uid="uid://jevh8fqhjr42" path="res://scenes/spikes.tscn" id="8_172wr"]
 [ext_resource type="PackedScene" uid="uid://83ehdlg1xast" path="res://scenes/next_level_door.tscn" id="9_1s4pk"]
 [ext_resource type="PackedScene" uid="uid://cnu7qu6rs47h7" path="res://scenes/slime.tscn" id="10_que50"]
 
@@ -308,6 +309,44 @@ position = Vector2(340, -94)
 [node name="pineapple5" parent="pineapples" instance=ExtResource("6_2aecg")]
 position = Vector2(452, -97)
 
+[node name="spikes" type="Node" parent="."]
+
+[node name="Spikes" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(554, -243)
+rotation = -1.5708
+
+[node name="Spikes2" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(554, -226)
+rotation = -1.5708
+
+[node name="Spikes3" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(538, -242)
+rotation = 1.5708
+
+[node name="Spikes4" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(538, -225)
+rotation = 1.5708
+
+[node name="Spikes5" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(402, -194)
+rotation = 3.14159
+
+[node name="Spikes6" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(419, -194)
+rotation = 3.14159
+
+[node name="Spikes7" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(385, -194)
+rotation = 3.14159
+
+[node name="Spikes8" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(368, -194)
+rotation = 3.14159
+
+[node name="Spikes9" parent="spikes" instance=ExtResource("8_172wr")]
+position = Vector2(436, -194)
+rotation = 3.14159
+
 [node name="Killzone" parent="." instance=ExtResource("7_6dial")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -332,4 +371,4 @@ shape = SubResource("RectangleShape2D_u5sy4")
 position = Vector2(402, -253)
 
 [node name="slime" parent="." instance=ExtResource("10_que50")]
-position = Vector2(315, -262)
+position = Vector2(315, -261)
