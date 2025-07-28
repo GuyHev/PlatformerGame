@@ -6,10 +6,14 @@ var names = []
 var scores = []
 
 func _ready() -> void:
-	api.fetch_top_ten()
 	api.top_ten_ready.connect(set_labels)
-
+	api.upload_score_done.connect(on_upload_done)
+	api.fetch_top_ten()
 	
+func on_upload_done() -> void:
+	print("Upload done, fetching new leaderboard...")
+	api.fetch_top_ten()
+
 func set_labels(xml_bytes : PackedByteArray) -> void:	
 	var children = self.get_children() 
 	fill_arrays(xml_bytes)

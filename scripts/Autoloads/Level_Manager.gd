@@ -25,8 +25,13 @@ func load_level(index: int, levels_container: Node) -> void:
 	levels_container.call_deferred("add_child", current_level) #adds the level node to the level container node as a child
 	#------------------------------------------------------------------------
 	
+	if current_level_index == 3: # play menu music when entering end game scene
+		SoundPlayer.play_music(preload("uid://3tssepmr1yd3"))
+	
 	get_tree().paused = false
 	await transition.fade_out()
+	
+	
 	
 func reload_current_level(levels_container: Node) -> void:
 	load_level(current_level_index, levels_container)

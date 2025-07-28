@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cia0viq4qjfx4"]
+
+[ext_resource type="StyleBox" uid="uid://cbay6nff2yesp" path="res://resources/square _button_down.tres" id="1_uq6u5"]
+[ext_resource type="StyleBox" uid="uid://078325o7bypg" path="res://resources/square _button_up.tres" id="2_jfduu"]
+[ext_resource type="Script" uid="uid://cajmq5aof7rdj" path="res://scripts/UI/HUD/info_button.gd" id="3_8awwc"]
+[ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="4_rumy4"]
+[ext_resource type="Theme" uid="uid://bed6gmmwlu6th" path="res://resources/UI_dialog.tres" id="5_2g6n0"]
+[ext_resource type="Script" uid="uid://87fahmoybi3j" path="res://scripts/UI/HUD/accept_dialog.gd" id="6_gua7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cuoo"]
+
+[node name="info" type="Button"]
+custom_minimum_size = Vector2(70, 70)
+offset_left = 1197.0
+offset_top = 12.0
+offset_right = 1267.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8cuoo")
+theme_override_styles/hover_pressed = ExtResource("1_uq6u5")
+theme_override_styles/hover = ExtResource("2_jfduu")
+theme_override_styles/pressed = ExtResource("1_uq6u5")
+theme_override_styles/normal = ExtResource("2_jfduu")
+script = ExtResource("3_8awwc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 6.0
+offset_right = 53.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("4_rumy4")
+theme_override_font_sizes/font_size = 40
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1
+title = "Information"
+initial_position = 2
+size = Vector2i(647, 200)
+theme = ExtResource("5_2g6n0")
+dialog_text = "Gameplay - collect all pineapples in order to proceed to the next level.
+Movement - use W / A / S / D or the Arrow Keys to move on land and in water. 
+Jump - W / SPACEBAR / Arrow Up.
+Difficulty - EasY / Normal / Hard - Respawn at the start of the level.
+Nightmare mode - One life, one shot, no respawns."
+script = ExtResource("6_gua7k")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="canceled" from="AcceptDialog" to="AcceptDialog" method="_on_canceled"]
+[connection signal="confirmed" from="AcceptDialog" to="AcceptDialog" method="_on_confirmed"]

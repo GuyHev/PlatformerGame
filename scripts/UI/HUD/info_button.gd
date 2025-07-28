@@ -1,7 +1,6 @@
 extends Button
 
 @onready var label: Label = $Label
-#@onready var accept_dialog: AcceptDialog = $"../AcceptDialog"
 @onready var accept_dialog: AcceptDialog = $AcceptDialog
 
 

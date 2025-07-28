@@ -23,7 +23,7 @@ func set_levels_reference(node: Node) -> void:
 func set_transition_reference(node: CanvasLayer) -> void:
 	transition = node
 	
-# This functions integer as argument (0 - decrement, 1 - increment)
+# This functions takes integer as argument (0 - decrement, 1 - increment)
 func select_difficulty(number: int)-> void:
 	if number == 0 and difficulty_index > 0:
 		difficulty_index -= 1;

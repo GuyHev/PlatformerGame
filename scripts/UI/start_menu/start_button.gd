@@ -8,6 +8,7 @@ func _on_pressed() -> void:
 	Global.set_life()
 	Global.score = 0
 	Global.deaths = 0
+	Global.pineapples_in_level.clear()
 	LevelManager.load_level(0, Global.levels)
 	await get_tree().create_timer(1.0).timeout
 	get_tree().root.get_node("Main_Game/Main_Menu").visible = false

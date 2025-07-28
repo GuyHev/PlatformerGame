@@ -327,26 +327,6 @@ rotation = 1.5708
 position = Vector2(538, -225)
 rotation = 1.5708
 
-[node name="Spikes5" parent="spikes" instance=ExtResource("8_172wr")]
-position = Vector2(402, -194)
-rotation = 3.14159
-
-[node name="Spikes6" parent="spikes" instance=ExtResource("8_172wr")]
-position = Vector2(419, -194)
-rotation = 3.14159
-
-[node name="Spikes7" parent="spikes" instance=ExtResource("8_172wr")]
-position = Vector2(385, -194)
-rotation = 3.14159
-
-[node name="Spikes8" parent="spikes" instance=ExtResource("8_172wr")]
-position = Vector2(368, -194)
-rotation = 3.14159
-
-[node name="Spikes9" parent="spikes" instance=ExtResource("8_172wr")]
-position = Vector2(436, -194)
-rotation = 3.14159
-
 [node name="Killzone" parent="." instance=ExtResource("7_6dial")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]

@@ -27,6 +27,7 @@ func _on_death_timer_timeout():
 		Global.deaths += 1
 		if Global.difficulty[Global.difficulty_index].name == "Nightmare":
 			LevelManager.load_end_scene(Global.levels)
+			SoundPlayer.play_music(preload("uid://3tssepmr1yd3"))
 			return
 		Global.set_life()
 		LevelManager.reload_current_level(Global.levels) # This also resets collision_layer and collision_mask back to true
