@@ -33,6 +33,7 @@ The game uses the [Dreamlo API](https://dreamlo.com/) to store and display high 
 2. Open the project with Godot and run
 
 NOTE: When running locally, leaderboard won't work because API key isn't included, but this not affectes gameplay. 
+      Dreamlo uses HTTP and not HTTPS like Talo
 
 ## 🧑‍💻 About Me
 
