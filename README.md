@@ -2,7 +2,7 @@
 
 **Play now 👉 [froggy on itch.io](https://guyhev.itch.io/froggy)**
 
-Froggy is a fast-paced 2D platformer built in [Godot Engine](https://godotengine.org/) using GDScript. You play as a frog navigating through dangerous terrain, dodging obstacles, and racing for the fastest time.
+Froggy is a 2D platformer built in [Godot Engine](https://godotengine.org/) using GDScript. You play as a frog navigating through various levels and terrains, dodging obstacles, and collecting pineapples.
 
 This project demonstrates my skills in game development, level design, player feedback systems, and API integration. It was developed as part of my personal portfolio to showcase my technical and creative capabilities.
 
