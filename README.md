@@ -31,7 +31,7 @@ The game uses the [Talo API](https://docs.trytalo.com/docs/http/player-api) to s
    git clone https://github.com/yourusername/froggy.git
 2. Open the project with Godot and run
 
-NOTE: When running locally, leaderboard won't work because API key isn't included, but this doesn't affectes gameplay. 
+NOTE: When running locally, leaderboard won't work because API key isn't included, this won't affectes gameplay. 
 
 ## 🧑‍💻 About Me
 
