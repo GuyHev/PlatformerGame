@@ -6,3 +6,4 @@
 icon.svg
 # Godot specific ignores
 export_presets.cfg
+/addons/talo/settings.cfg
