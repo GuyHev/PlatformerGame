@@ -10,7 +10,6 @@ This project demonstrates my skills in game development, level design, player fe
 
 - 🎮 Tight and responsive controls  
 - 🌍 Multiple platforming levels  
-- 🕒 Time-based scoring system  
 - 🌐 Online leaderboard using the [Talo API](https://docs.trytalo.com/docs/http/player-api)  
 - 🔊 Simple sound effects and animations  
 - 💻 Exported to HTML5 and playable directly in browser  
