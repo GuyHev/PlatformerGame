@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c8ls703ygi4mr" path="res://scripts/UI/end_game/leaderboard.gd" id="1_mrg81"]
 [ext_resource type="FontFile" uid="uid://yngi0uil3dpq" path="res://assets/Fonts/MinimalPixel v2.ttf" id="2_wgq7h"]
-[ext_resource type="StyleBox" uid="uid://bnd7oltv6a2ue" path="res://resources/label_border.tres" id="3_8lgqg"]
-[ext_resource type="StyleBox" uid="uid://b7j8p68xg4ix3" path="res://resources/label_border_2.tres" id="4_e4dr1"]
+[ext_resource type="StyleBox" uid="uid://bnd7oltv6a2ue" path="res://Resources/label_border.tres" id="3_8lgqg"]
+[ext_resource type="StyleBox" uid="uid://b7j8p68xg4ix3" path="res://Resources/label_border_2.tres" id="4_e4dr1"]
 
 [node name="leaderboard" type="Control"]
 layout_mode = 3
