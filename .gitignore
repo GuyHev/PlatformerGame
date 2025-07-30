@@ -5,4 +5,4 @@
 #ignore svg file
 icon.svg
 # Godot specific ignores
-config/
+export_presets.cfg

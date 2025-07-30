@@ -18,10 +18,15 @@ func _on_confirmed() -> void:
 		line_edit.grab_focus()
 		return
 		
-	api.upload_score(line_edit.text, Global.get_total())
+	await submit_score(line_edit.text, Global.get_total())
 	visible = false
 	submitted = true
 
-
 func _on_canceled() -> void:
 	SoundPlayer.play_sfx(preload("uid://6f5s0t2k7h2u"))
+	
+func submit_score(raw_name: String, score: int) -> void:
+	var normalized_name = raw_name.to_lower()
+	await Talo.players.identify("username", normalized_name)
+	await Talo.leaderboards.add_entry("leaderboard", score)
+	print("Score uploaded for:", normalized_name)
