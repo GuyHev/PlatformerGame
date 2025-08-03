@@ -1,6 +1,7 @@
 extends ConfirmationDialog
 
 @onready var line_edit: LineEdit = $LineEdit
+@export var score_list_path: NodePath
 
 var submitted = false
 
@@ -19,6 +20,7 @@ func _on_confirmed() -> void:
 		return
 		
 	await submit_score(line_edit.text, Global.get_total())
+	Signals.update_leaderboard.emit()
 	visible = false
 	submitted = true
 
@@ -30,3 +32,4 @@ func submit_score(raw_name: String, score: int) -> void:
 	await Talo.players.identify("username", normalized_name)
 	await Talo.leaderboards.add_entry("leaderboard", score)
 	print("Score uploaded for:", normalized_name)
+	

@@ -4,10 +4,11 @@ const OFFSET = 2
 @export var leaderboard_name: String = "leaderboard"
 
 func _ready() -> void:
-	await Talo.leaderboards.get_entries(leaderboard_name)
-	set_labels()
+	Signals.connect("update_leaderboard", set_labels)
+	Signals.update_leaderboard.emit()
 
 func set_labels() -> void:
+	await Talo.leaderboards.get_entries(leaderboard_name)
 	var count = 0
 	var children = get_children()
 	var entries = Talo.leaderboards.get_cached_entries(leaderboard_name)
@@ -23,5 +24,5 @@ func set_labels() -> void:
 			name_label.text = entry.player_alias.identifier
 
 		if score_label is Label:
-			score_label.text = str(entry.score)
+			score_label.text = str(int(entry.score))
 		count += 1
